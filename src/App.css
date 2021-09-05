@@ -1,38 +1,149 @@
 .App {
   text-align: center;
+  background-color:  #f5f5f5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section-center{
+  height: 100vh;
+  overflow: hidden;
+}
+main{
+  position: absolute;
+  top: 20%;
+  left: 2%;
+  width: 95vw;
+  height: 70%;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 10px rgba(255,255,255,0.3);
+  /* animation: imageAnimation 36s linear infinite 0s; */
+}
+main.activeSlide{
+  opacity: 1;
+  transform: translateX(0);
+}
+main.lastSlide{
+  transform: translateX(-100%);
+}
+main.nextSlide{
+  transform: translateX(100%);
+}
+.shade{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+}
+.prev,
+.next {
+  position: absolute;
+  top: 350px;
+  transform: translateY(-50%);
+  background: transparent;
+  color: #f44336;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border-color: transparent;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.prev:hover,
+.next:hover {
+  background: #333;
+}
+.prev {
+  left: 5%;
+}
+.next {
+  right: 5%;
+}
+main .info{
+  /* border: 2px solid red; */
+  position: absolute;
+  width: 70%;
+  height: 50%;
+  background:transparent;
+  top: 20%;
+  left: 12%;
+  color: #fff;
+letter-spacing: 0.1rem;
+/* animation: imageAnimation 36s linear infinite 0s; */
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+ h2{
+  /* border: 2px solid red; */
+  /* color: #404040; */
+  height: 100px;
+  font-size: 3rem;
+  font-weight: 500;
+  text-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  /* background: red; */
+
+}
+ h3{
+  /* border: 2px solid blue; */
+  height: 50px;
+  z-index: 1000;
+  font-size: 2rem;
+  font-weight: 400;
+  text-shadow: 0 5px 10px rgba(0,0,0,0.4);
+
+
+}
+.bg{
+  width:100%;
+  height: 100%;
+}
+.btn-link{
+  text-decoration:none ;
+  color: #f1f1f1;
+}
+@media screen and (max-width:768px){
+  .section-center{
+    height: 70vh;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  main{
+    position: absolute;
+    top: 15%;
+    left: 1%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(255,255,255,0.3);
+    /* animation: imageAnimation 36s linear infinite 0s; */
   }
-  to {
-    transform: rotate(360deg);
+  main .info{
+    /* border: 2px solid red; */
+    position: absolute;
+    width: 70%;
+    height: 50%;
+    background:transparent;
+    top: 30%;
+    left: 12%;
+    color: #fff;
+  letter-spacing: 0.1rem;
+  /* animation: imageAnimation 36s linear infinite 0s; */
+  
   }
+
+main .info h2{
+  font-size: 1.5rem;
+}
+main .info h3{
+  font-size: 1rem;
+}
+.prev {
+  left: 2%;
+}
+.next {
+  right: 2%;
+}
 }
