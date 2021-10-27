@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import images from '../assets/dataImages';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'; 
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -8,11 +7,9 @@ import Button from '@material-ui/core/Button';
 
 
 
-// const useStyles = makeStyles((theme) => ({}))
 
 const Banner = () => {
 
-    // const classes = useStyles()
 
     const [bg,setBg] = useState(images);
     const [index ,setIndex] = useState(0);
@@ -57,7 +54,7 @@ const Banner = () => {
         <div className="App">
         <div className="section-center">
             {bg.map((image,imageIndex) => {
-                const {id,img} = image;
+                const {id,img, title} = image;
                 let position = 'nextSlide'
 
                 if(imageIndex === index){
@@ -73,18 +70,12 @@ const Banner = () => {
                         <img src={img} alt="traffic" className="bg"/>
                         <div className="shade"></div>
                         <div className="info">
-                            <h2>Hello,I am Miro Bagaric</h2>
-                            <h3>I'm a professional driver</h3>
-                            <Button variant="contained" color="secondary" 
-className="btn-banner">
-     <Link className="btn-link" to="/contact">Hire Me</Link>
-     
- </Button>
-                        </div>
-                       
-                       
-                       
-                       
+                            
+                            <h3>{title}</h3>
+                            <Button variant="contained" color="secondary" className="btn-banner">
+                              <Link className="btn-link" to="/contact">kontakt</Link>
+                          </Button>
+                        </div>   
                     </main>
                 )
             })}
@@ -92,10 +83,17 @@ className="btn-banner">
                 <ChevronLeftIcon onClick={prevSlide}/>
             </button>
             <button className="next">
-    <ChevronRightIcon onClick={nextSlide}/>
-</button>
-        </div>   
+                <ChevronRightIcon onClick={nextSlide}/>
+                  </button>
+                </div>   
         </div>
+
+        <div className="arrow">
+        <span></span>
+        <span></span>
+        <span></span>
+        <p>Nach unten scrollen</p>
+      </div>
         </>
     )
 }

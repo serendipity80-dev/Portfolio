@@ -1,59 +1,108 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import ImageList from '@material-ui/core/ImageList';
-import ImageListItem from '@material-ui/core/ImageListItem';
-import ImageListItemBar from '@material-ui/core/ImageListItemBar';
-import ardData from '../assets/ardItems';
+import {useState, useEffect} from 'react';
+import ardShein from '../assets/ardItems';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'; 
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+// import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-      transform:"translate(0%,11%)",
-      height:"100vh",
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-     backgroundColor: "#f5f5f5",
-  },
-  imageList: {
-   width: "80vw",
-   height:500,
-  backgroundColor: "#f5f5f5",
-  // padding:"2rem",
+// const useStyles = makeStyles ({
+//   root: {
+//     height: '100vh',
+//     overflow: 'hidden',
+// },
+// main: {
+//   position:'absolute',
+//   top: '20%',
+//   left: '50%',
+//   width:'60vw',
+//   height:'70vh',
+//   opacity:' 0',
+//   transition: 'all 0.3s ease-in-out',
+//   boxShadow:' 0 5px 10px rgba(255,255,255,0.3)',
+// }
+//   }
+// )
 
-  
-  },
-  image: {
-      width:"100%",
-      heigh:"100%",
-  },
-  itemBar:{
-      backgroundColor:"rgba(0,0,0,0.3)",
-      textTransform:"uppercase",
-      textAlign:"center",
-  },    
-  
-  
-  
- 
-}));
+const ArdShein = () => {
 
-export default function ArdSchein() {
-  const classes = useStyles();
+  // const classes = useStyles();
 
-  return (
-    <div className={classes.root}>
-      <ImageList rowHeight={200} className={classes.imageList} cols={4}>
-        {ardData.map((item) => (
-          <ImageListItem key={item.img}>
-            <img src={item.img} alt={item.title} className={classes.image} />
-            <ImageListItemBar
-              title={item.title}
-              className={classes.itemBar}
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
-    </div>
-  );
+  const [data, setData] = useState(ardShein);
+  const [index, setIndex] = useState(0);
+
+  const prevSlide = ()=>{
+    setIndex((oldIndex) =>{
+      let index = oldIndex -1;
+      if (index < 0) {
+        index = data.length -1;
+      }
+      return index;
+    });
+  };
+  const nextSlide = ()=>{
+    setIndex((oldIndex) =>{
+      let index = oldIndex +1;
+      if (index >  data.length - 1) {
+        index = 0;
+      }
+      return index;
+    });
+  };
+
+      useEffect(() => {
+        let slider = setInterval(() => {
+                  setIndex((prevIndex) => {
+                  let index = prevIndex +1
+      
+             if(index > data.length -1){
+               index = 0
+              }
+               return index
+             })
+              },36000)
+         return () => {
+          clearInterval(slider)
+        }
+          },[index,data])
+
+        return (
+          <>
+          <div className="App">
+        <div className="section-center">
+            {data.map((adrData,dataIndex) => {
+                const {id,img, title} = adrData;
+                let position = 'nextSlide'
+
+                if(dataIndex === index){
+                    position = 'activeSlide'
+                }
+
+                if(dataIndex === index -1 || (index === 0 && dataIndex === adrData.length -1)) {
+                    position = " lastSlide";
+                }
+
+                return(
+                    <una className={position} key={id}>
+                        <img src={img} alt="traffic" className="bg ard"/>
+                        <div className="shade"></div>
+                        <div className="info">
+                            <h2>{title}</h2>
+                            
+                        </div>   
+                    </una>
+                )
+            })}
+            <button className="prev">
+                <ChevronLeftIcon onClick={prevSlide}/>
+            </button>
+            <button className="next">
+    <ChevronRightIcon onClick={nextSlide}/>
+</button>
+        </div>   
+        </div>
+</>
+
+)
+
 }
+
+export default ArdShein;

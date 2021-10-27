@@ -22,6 +22,14 @@ const useStyles = makeStyles((theme) => ({
     width:"100%",
     height:"100%",
   },
+  text :{
+    textTransform:"uppercase",
+     fontSize:"1.5rem",
+     color:"#f44336",
+    [theme.breakpoints.only("xs")]: {
+      fontSize:"1rem",
+    },
+  },
   }));
 
 
@@ -48,9 +56,9 @@ export default function Gallery() {
 
   return (
     <div className={classes.root}>
-      <ImageList rowHeight={160} className={classes.imageList} cols={3}>
-      <ImageListItem key="Subheader" cols={3} style={{height:'auto'}}>
-      <ListSubheader component="div" style={{fontWeight:'bold'}}>Ovde bi trebao doci opis </ListSubheader>
+      <ImageList rowHeight={180} className={classes.imageList} cols={3}>
+      <ImageListItem key="Subheader" cols={2} style={{height:'auto'}}>
+      <ListSubheader component="div"  className={classes.text}style={{fontWeight:'bold',}}>fahrzeuge die ich bewegt habe </ListSubheader>
       </ImageListItem>
         {itemData.map((item) => (
           <ImageListItem key={item.img} cols={item.cols || 1}>

@@ -15,19 +15,23 @@ import { Link as RouterLink } from "react-router-dom";
 
 const headersData = [
   {
-    label:"Home",
+    label:"Startseite",
 href: "/",
   },
   {
-    label: "About Me",
+    label: "Lebenslauf",
     href: "/about",
+  },
+  {
+    label: "Weiterbidung",
+    href: "/training",
   },
   {
     label: "ADR",
     href: "/adr",
   },
   {
-    label: "My Gallery",
+    label: "Die Galerie",
     href: "/gallery",
   },
 ];

@@ -4,7 +4,7 @@ const itemData = [
       img: 'https://res.cloudinary.com/dbiqsk9jz/image/upload/v1627826208/samples/Traffic/07_cnzpe9.jpg',
       title: 'Image',
       author: 'author',
-      cols: 2,
+      cols: 1,
     },
 
     {
@@ -31,13 +31,13 @@ const itemData = [
         img: 'https://res.cloudinary.com/dbiqsk9jz/image/upload/v1628434907/samples/Traffic/19_sdqge7.jpg',
          title: 'Image',
          author: 'author',
-         cols: 1,
+         cols: 2,
     },
     {
         img: 'https://res.cloudinary.com/dbiqsk9jz/image/upload/v1628434894/samples/Traffic/12_ij5sxj.jpg',
          title: 'Image',
          author: 'author',
-         cols: 2,
+         cols: 1,
     },
     {
         img: 'https://res.cloudinary.com/dbiqsk9jz/image/upload/v1628434932/samples/Traffic/21_zwm67w.jpg',
@@ -55,7 +55,7 @@ const itemData = [
         img: 'https://res.cloudinary.com/dbiqsk9jz/image/upload/v1627826168/samples/Traffic/10_gymghv.jpg',
          title: 'Image',
          author: 'author',
-         cols: 2,
+         cols: 1,
     },
   ];
 

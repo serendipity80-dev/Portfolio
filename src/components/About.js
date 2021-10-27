@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     mainContainer:{
         marginTop:'4.5rem',
         background:'#f5f5f5' ,
+        minHeight:"100vh",
     },
     timeLine:{
         position:'relative',
@@ -53,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
             right:'-0.625rem',
             top:'calc(50% - 5px)',
             borderStyle:'solid',
-            borderColor:'tomato tomato transparent transparent',
+            borderColor:' #f44336 #f44336 transparent transparent',
             borderWidth:'0.625rem',
             transform:'rotate(45deg)',
         },
@@ -69,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
             "&:nth-of-type(2n):before" :{
                 right:'auto',
                 left:'-0.625rem',
-                borderColor:'transparent transparent tomato tomato',
+                borderColor:'transparent transparent #f44336 #f44336',
             },
         },
     },
@@ -101,8 +102,8 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     heading:{
-        color:'tomato',
-        padding:'3rem 0',
+        color:'#f44336',
+        padding:'5rem 0',
         textTransform:'uppercase',
     },
     subHeading:{
@@ -110,6 +111,7 @@ const useStyles = makeStyles((theme) => ({
         padding:'0',
         textTransform:'uppercase',
     },
+   
 }));
 
 const About = () => {
@@ -118,100 +120,119 @@ const About = () => {
         <>
             <Box component='header' className={classes.mainContainer}>
                 <Typography variant='h4' align='center' className={classes.heading}>
-                    working experience
+                Beruflicher Werdegang
                 </Typography>
              <Box component='div' className={classes.timeLine}>
              <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-                    2013
+             2003-2005
                     </Typography>
                     <Box component='div' className={classes.timeLineItem}>
                         <Typography variant='h5' align='center' className={classes.subHeading}>
-                            web design
+                        kellner
                         </Typography>
-                        <Typography variant='body1' align='center' style={{color:'#333'}}>
-                            company name
+                        <Typography variant='body1' align='center' style={{color:'#333', textTransform:"capitalize"}}>
+                        restaurant kupres alt oxford
                         </Typography>
-                        <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
+                        {/* <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
                             Lorem ipsum
-                        </Typography>
+                        </Typography> */}
                         </Box>
                
              <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-                 2014
+             2006
                     </Typography>
              <Box component="div" className={classes.timeLineItem}>
                 <Typography variant='h5' align='center' className={classes.subHeading}>
-             web developer
+                lagerarbeit
                 </Typography>
-                 <Typography variant='body1' align='center' style={{color:'#333'}}>
-             company name
+                 <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
+                 pdm
                  </Typography>
                 <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-             Lorem ipsum
+                verantwortlich für die be- und Entladung der LKW´s und die fachmännische Lagerung der
+                Ware bei der Firma Greiwing in Greven 
              </Typography>
                  </Box>
 
 
                  <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-                        2015
+                 2009
                     </Typography>
                  <Box component='div' className={classes.timeLineItem}>
                     <Typography variant='h5' align='center' className={classes.subHeading}>
-                     web design
+                    praktikum
                      </Typography>
-                    <Typography variant='body1' align='center' style={{color:'#333'}}>
-                company name
+                    <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
+                    auto  oberman
                      </Typography>
                  <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                Lorem ipsum
+                 Praktikum als LKW-Fahrer bei int. Spedition Auto-Obermann
                  </Typography>
                  </Box>
    
                  <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-                          2016
+                 2009-2010
                       </Typography>
                   <Box component="div" className={classes.timeLineItem}>
                         <Typography variant='h5' align='center' className={classes.subHeading}>
-                        web developer
+                        lkw-fahrer
                        </Typography>
-                 <Typography variant='body1' align='center' style={{color:'#333'}}>
-                     company name
+                 <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
+                 auto oberman
                   </Typography>
                     <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                    Lorem ipsum 
+                    Als Fahrer einen Autotransporter (Achter Zug)
+                    Beschäftigt als LKW-Fahrer bei int. Spedition Auto-Obermann  
                  </Typography>
                      </Box>
 
 
                      <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-                        2017
+                     2011-2014
                         </Typography>
                     <Box component='div' className={classes.timeLineItem}>
                 <Typography variant='h5' align='center' className={classes.subHeading}>
-                web design
+                lkw-fahrer
                 </Typography>
-            <Typography variant='body1' align='center' style={{color:'#333'}}>
-                    company name
+            <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
+            spedition tralas gmbh
                 </Typography>
                 <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                            Lorem ipsum
+                Fahrer eines Planenzug´s bei der Spedition Tralas GmbH in
+                Dorsten
                         </Typography>
                     </Box>
                 <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-                        2018
+                2014-2018
                     </Typography>
                 <Box component="div" className={classes.timeLineItem}>
             <Typography variant='h5' align='center' className={classes.subHeading}>
-                        web developer
+            omnibusfahrer
                     </Typography>
-                <Typography variant='body1' align='center' style={{color:'#333'}}>
-                        company name
+                <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
+                wega reisen gmbh
                 </Typography>
         <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                    Lorem ipsum 
+        Als Omnibusfahrer bei der Firma WEGA Reisen GmbH
+        in Ratingen 
                     </Typography>
                     </Box>
-   
+                    <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
+                    2018-2021
+                    </Typography>
+                    <Box component='div' className={classes.timeLineItem}>
+                        <Typography variant='h5' align='center' className={classes.subHeading}>
+                           omnibusfahrer
+                        </Typography>
+                        <Typography variant='body1' align='center' style={{color:'#333', textTransform:'capitalize'}}>
+                           tirtey GmbH
+                        </Typography>
+                        <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
+                        Als Omnibusfahrer bei Reisebüro und Omnibusbetrieb Tirtey
+                        GmbH & Co. KG, in Titz-Rödingen
+                        Ab September 2020 als Disponent in Bochum tätig.
+                        </Typography>
+                        </Box>
 
                 </Box>
             </Box>

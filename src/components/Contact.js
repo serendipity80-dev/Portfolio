@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, {useRef} from 'react';
+import emailjs from 'emailjs-com';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { TextField, Typography, Button, Grid, Box} from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
@@ -10,16 +11,20 @@ const useStyles = makeStyles(theme=>({
     },
     button :{
         marginTop:"2rem",
-        color: "tomato",
-        borderColor:"tomato",
+        color:"#f1f1f1",
+        background:"#f44336",
+        "&:hover": {
+            color:"#f44336",
+        }
     },
+    
 }));
 
 const InputField = withStyles({
     root: {
         marginTop:"2rem",
         "& label.Mui-focused":{
-            color: "tomato",
+            color: "#f44336",
         },
         "& label": {
             color:'tan',
@@ -42,78 +47,70 @@ const InputField = withStyles({
 const Contact = () => {
     const classes = useStyles();
 
-    const [status,setStatus] = useState("Contact Me");
+    const form = useRef();
 
-    const handleSubmit = async (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
-        setStatus("Sending...");
+    
+        emailjs.sendForm('service_xd0lt88', 'template_miro', e.target, 'user_ZYHhw5Xp4i3qpbBRcr0Xw')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+          e.target.reset()
+      };
 
-        const {name, email, companyName, message } = e.target.elements;
 
-        let details = {
-
-            name:name.value,
-            email:email.value,
-            companyName:companyName.value,
-            message:message.value,
-
-        };
-
-let response = await fetch ("http://localhost:3000/contact", {
-    method:"POST",
-    headers: {
-        "Content-Type": "application/json;charset=utf-8",
-    },
-    body:JSON.stringify(details),
-});
-
-    setStatus("Contact Me");
-
-    let result = await response.json();
-    alert(result.status);
-
-    };
 
     return (
         <Box component="div" style={{backgroundColor:" #f5f5f5", height:"100vh"}}>
         <Grid container justifyContent = "center">
-<Box component = "form" className={classes.form} onSubmit= {handleSubmit}>
-    <Typography variant = "h5" style={{textTransform:"upperCase", marginTop:"3.5rem"}}>
-        hire or contact me
+       
+<Box component = "form" ref={form} className={classes.form} onSubmit= {sendEmail}>
+    <Typography variant = "h5" style={{textTransform:"upperCase", marginTop:"4.5rem"}}>
+        kontaktieren sie mich
     </Typography>
     <InputField fullWidth={true}
                 label="Name"
-                id="name"
+                name="name"
                 variant="outlined"
                 margin="dense"
                 size="medium"
-                inputProps = {{style:{color:"#333"}}} />
+                inputProps = {{style:{color:"#333"}}}
+                required
+                />
 
                  <InputField fullWidth={true}
                             label="Email"
-                            id="email"
+                            email="email"
                             variant="outlined"
                             margin="dense"
                             size="medium"
-                            inputProps = {{style:{color:"#333"}}} />
+                            inputProps = {{style:{color:"#333"}}}
+                            required
+                            />
 
               <InputField fullWidth={true}
-                        label="Company Name"
-                        id="companyName"
+                        label="Subject"
+                        subject="subject"
                         variant="outlined"
                         margin="dense"
                         size="medium"
-                        inputProps = {{style:{color:"#333"}}} />
+                        inputProps = {{style:{color:"#333"}}}
+                        required
+                        />
 
                 <InputField fullWidth={true}
                             label="Your Message"
-                            id="message"
+                            name="message"
                             variant="standard"
-                            // margin="dense"
                             size="medium"
-                            inputProps = {{style:{color:"#333"}}} />
+                            inputProps = {{style:{color:"#333"}}}
+                            required   
+                            />
 
-                        <Button variant="outlined" fullWidth={true} className={classes.button} endIcon={<SendIcon/>}>{status}</Button>
+                        <Button variant="outlined" fullWidth={true} className={classes.button} endIcon={<SendIcon/>}>Contact me</Button>
 </Box>
         </Grid>
         </Box>
