@@ -22,10 +22,10 @@ href: "/",
     label: "Lebenslauf",
     href: "/about",
   },
-  {
-    label: "Weiterbidung",
-    href: "/training",
-  },
+  // {
+  //   label: "Weiterbidung",
+  //   href: "/training",
+  // },
   {
     label: "ADR",
     href: "/adr",

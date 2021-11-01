@@ -33,30 +33,12 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const itemData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *     cols: 2,
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
 export default function Gallery() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <ImageList rowHeight={180} className={classes.imageList} cols={3}>
+      <ImageList rowHeight={180} className={classes.imageList} cols={4}>
       <ImageListItem key="Subheader" cols={2} style={{height:'auto'}}>
       <ListSubheader component="div"  className={classes.text}style={{fontWeight:'bold',}}>fahrzeuge die ich bewegt habe </ListSubheader>
       </ImageListItem>

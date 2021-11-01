@@ -7,7 +7,7 @@ import SendIcon from '@material-ui/icons/Send';
 const useStyles = makeStyles(theme=>({
     form : {
         transform:"translate(0%,5%)",
-        width:"50%",
+        width:"100%",
     },
     button :{
         marginTop:"2rem",
@@ -40,7 +40,7 @@ const InputField = withStyles({
                 borderColor:"tan",
             },
         },
-
+       
     },
 })(TextField);
 
@@ -52,13 +52,13 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
     
-        emailjs.sendForm('service_xd0lt88', 'template_miro', e.target, 'user_ZYHhw5Xp4i3qpbBRcr0Xw')
+        emailjs.sendForm('service_xd0lt88', 'template_rvr2uzr', e.target, 'user_ZYHhw5Xp4i3qpbBRcr0Xw')
           .then((result) => {
               console.log(result.text);
           }, (error) => {
               console.log(error.text);
           });
-          e.target.reset()
+          e.target.reset();
       };
 
 
@@ -66,11 +66,12 @@ const Contact = () => {
     return (
         <Box component="div" style={{backgroundColor:" #f5f5f5", height:"100vh"}}>
         <Grid container justifyContent = "center">
-       
-<Box component = "form" ref={form} className={classes.form} onSubmit= {sendEmail}>
+       <form  onSubmit= {sendEmail}>
+<Box component = "form" ref={form} className={classes.form}>
     <Typography variant = "h5" style={{textTransform:"upperCase", marginTop:"4.5rem"}}>
         kontaktieren sie mich
     </Typography>
+    
     <InputField fullWidth={true}
                 label="Name"
                 name="name"
@@ -83,7 +84,7 @@ const Contact = () => {
 
                  <InputField fullWidth={true}
                             label="Email"
-                            email="email"
+                            name="email"
                             variant="outlined"
                             margin="dense"
                             size="medium"
@@ -93,7 +94,7 @@ const Contact = () => {
 
               <InputField fullWidth={true}
                         label="Subject"
-                        subject="subject"
+                        name="subject"
                         variant="outlined"
                         margin="dense"
                         size="medium"
@@ -111,7 +112,9 @@ const Contact = () => {
                             />
 
                         <Button variant="outlined" fullWidth={true} className={classes.button} endIcon={<SendIcon/>}>Contact me</Button>
+                       
 </Box>
+</form>
         </Grid>
         </Box>
     )

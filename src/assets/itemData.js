@@ -31,7 +31,7 @@ const itemData = [
         img: 'https://res.cloudinary.com/dbiqsk9jz/image/upload/v1628434907/samples/Traffic/19_sdqge7.jpg',
          title: 'Image',
          author: 'author',
-         cols: 2,
+         cols: 1,
     },
     {
         img: 'https://res.cloudinary.com/dbiqsk9jz/image/upload/v1628434894/samples/Traffic/12_ij5sxj.jpg',

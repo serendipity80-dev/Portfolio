@@ -9,7 +9,7 @@
 }
 main{
   position: absolute;
-  top: 20%;
+  top: 17%;
   left: 2%;
   width: 95vw;
   height: 70%;
@@ -93,7 +93,7 @@ letter-spacing: 0.1rem;
   font-size: 2.5rem;
   font-weight: 400;
   text-shadow: 0 5px 10px rgba(0,0,0,0.4);
-  text-transform: capitalize;
+  text-transform: uppercase;
 
 
 }
@@ -109,7 +109,7 @@ letter-spacing: 0.1rem;
 /* ARROW */
 .arrow {
   position: absolute;
-  top: 80%;
+  top: 75%;
   left: 50%;
   z-index: 999;
 }

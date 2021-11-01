@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Box } from '@material-ui/core';
+import Training from './Training';
 
 const useStyles = makeStyles((theme) => ({
     
@@ -148,7 +149,7 @@ const About = () => {
                  <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
                  pdm
                  </Typography>
-                <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
+                <Typography variant="subtitle1" align="center" style={{color:'tan', textTransform:"capitalize"}}>
                 verantwortlich für die be- und Entladung der LKW´s und die fachmännische Lagerung der
                 Ware bei der Firma Greiwing in Greven 
              </Typography>
@@ -236,8 +237,9 @@ const About = () => {
 
                 </Box>
             </Box>
-
+            <Training/>
         </>
+
     )
 }
 
