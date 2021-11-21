@@ -249,7 +249,7 @@ const useStyles = makeStyles((theme) => ({
         maxWidth:'8.375rem',
         maxHeight:'2.5rem',
         margin:' 0 1rem 0 auto',
-        fontSize:'1.8rem',
+        fontSize:'1.5rem',
         background:'#616161',
         color:'#f1f1f1',
         // color:'#616161',
@@ -281,6 +281,14 @@ const useStyles = makeStyles((theme) => ({
         padding:'0',
         textTransform:'uppercase',
     },
+    underline:{
+        height:"0.25rem",
+        width:"5rem",
+        background:"#f44336",
+        marginLeft:"auto",
+        marginRight:"auto",
+        marginTop:"0.735rem",
+    },
    
 }));
 
@@ -291,84 +299,29 @@ const Training = () => {
             <Box component='header' className={classes.mainContainer}>
                 <Typography variant='h4' align='center' className={classes.heading}>
                 weiterbildung
+            <div className={classes.underline}></div>
                 </Typography>
              <Box component='div' className={classes.timeLine}>
-             <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-             2006-2009
+                    <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
+                    05.09.2017
                     </Typography>
                     <Box component='div' className={classes.timeLineItem}>
                         <Typography variant='h5' align='center' className={classes.subHeading}>
-                        lkw fahrer
+                           adr-schein
                         </Typography>
-                        <Typography variant='body1' align='center' style={{color:'#333', textTransform:"capitalize"}}>
-                        fahrschule block
+                        <Typography variant='body1' align='center' style={{color:'#333', textTransform:'capitalize'}}>
+                           dekra akademie
                         </Typography>
                         <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                        Umschulung zum LKW Fahrer Fahrschule Block in StadtlohnLorem ipsum
+                        Sprengtechnische Lehtgänge nach §32 der Ersten Verordnung zum Sprengstoffgesetz
                         </Typography>
                         </Box>
                
-             <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-             2012-2014
-                    </Typography>
-             <Box component="div" className={classes.timeLineItem}>
-                <Typography variant='h5' align='center' className={classes.subHeading}>
-                Berufskraftfahrer
-                </Typography>
-                 <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
-                 fahrschule rheinhold
-                 </Typography>
-                <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                Umschulung zum Berufskraftfahrer Bus mit IHK Abschluss beschleunigte grundqualifikation
-             </Typography>
-                 </Box>
 
 
-                 <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-                 24.01.2011
-                    </Typography>
-                 <Box component='div' className={classes.timeLineItem}>
-                    <Typography variant='h5' align='center' className={classes.subHeading}>
-                    adr-schein
-                     </Typography>
-                    <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
-                    dekra akademie / gelsenkirchen
-                     </Typography>
-                 <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                 ADR –Schein Basis & Tank
-                 </Typography>
-                 </Box>
    
-                 <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-                 23.05.2011
-                      </Typography>
-                  <Box component="div" className={classes.timeLineItem}>
-                        <Typography variant='h5' align='center' className={classes.subHeading}>
-                        adr - schein
-                       </Typography>
-                 <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
-                 dekra akademie
-                  </Typography>
-                    <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                    ADR-Schein Kl. 7 Radioaktive Stoffe
-                 </Typography>
-                     </Box>
 
 
-                     <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-                     25.06.2011
-                        </Typography>
-                    <Box component='div' className={classes.timeLineItem}>
-                <Typography variant='h5' align='center' className={classes.subHeading}>
-                adr schein
-                </Typography>
-            <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
-            dekra akademie
-                </Typography>
-                <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                ADR-Schein Kl. 1 Explosive Stoffe und Gegenstände mit Explosivstoff
-                        </Typography>
-                    </Box>
                 <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
                 24.01.2016
                     </Typography>
@@ -383,18 +336,74 @@ const Training = () => {
         Verlängerung Seminar erfolgreich absolviert
                     </Typography>
                     </Box>
-                    <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
-                    05.09.2017
+             <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
+             2012-2014
+                    </Typography>
+             <Box component="div" className={classes.timeLineItem}>
+                <Typography variant='h5' align='center' className={classes.subHeading}>
+                Berufskraftfahrer
+                </Typography>
+                 <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
+                 fahrschule rheinhold
+                 </Typography>
+                <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
+                Umschulung zum Berufskraftfahrer Bus mit IHK Abschluss beschleunigte grundqualifikation
+             </Typography>
+                 </Box>
+                     <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
+                     25.06.2011
+                        </Typography>
+                    <Box component='div' className={classes.timeLineItem}>
+                <Typography variant='h5' align='center' className={classes.subHeading}>
+                adr schein
+                </Typography>
+            <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
+            dekra akademie
+                </Typography>
+                <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
+                ADR-Schein Kl. 1 Explosive Stoffe und Gegenstände mit Explosivstoff
+                        </Typography>
+                    </Box>
+                 <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
+                 23.05.2011
+                      </Typography>
+                  <Box component="div" className={classes.timeLineItem}>
+                        <Typography variant='h5' align='center' className={classes.subHeading}>
+                        adr - schein
+                       </Typography>
+                 <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
+                 dekra akademie
+                  </Typography>
+                    <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
+                    ADR-Schein Kl. 7 Radioaktive Stoffe
+                 </Typography>
+                     </Box>
+                 <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
+                 24.01.2011
+                    </Typography>
+                 <Box component='div' className={classes.timeLineItem}>
+                    <Typography variant='h5' align='center' className={classes.subHeading}>
+                    adr-schein
+                     </Typography>
+                    <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
+                    dekra akademie / gelsenkirchen
+                     </Typography>
+                 <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
+                 ADR –Schein Basis & Tank
+                 </Typography>
+                 </Box>
+             <Typography variant='h2' className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
+             2006-2009
                     </Typography>
                     <Box component='div' className={classes.timeLineItem}>
                         <Typography variant='h5' align='center' className={classes.subHeading}>
-                           adr-schein
+                        lkw fahrer
                         </Typography>
-                        <Typography variant='body1' align='center' style={{color:'#333', textTransform:'capitalize'}}>
-                           dekra akademie
+                        <Typography variant='body1' align='center' style={{color:'#333', textTransform:"capitalize"}}>
+                        fahrschule block
                         </Typography>
                         <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                        Sprengtechnische Lehtgänge nach §32 der Ersten Verordnung zum Sprengstoffgesetz
+                        Umschulung zum LKW Fahrer Fahrschule Block in StadtlohnLorem ipsum
                         </Typography>
                         </Box>
 

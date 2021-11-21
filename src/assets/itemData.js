@@ -57,6 +57,12 @@ const itemData = [
          author: 'author',
          cols: 1,
     },
+    {
+        img: 'https://res.cloudinary.com/dbiqsk9jz/image/upload/v1635715464/samples/Traffic/IMG-20211026-WA0005_vnul2n.jpg',
+         title: 'Image',
+         author: 'author',
+         cols: 1,
+    },
   ];
 
   export default itemData;

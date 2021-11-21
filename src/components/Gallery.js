@@ -12,11 +12,23 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
+    [theme.breakpoints.only("xs")]: {
+      display:"flex",
+      alignItems:"center",
+      justifyContent:"center",
+    },
+
   },
   imageList: {
-    padding:'5rem',
+    padding:'10rem',
+    // transform:"translate(0%,50%)",
     width: '85vw',
-    height: 500,
+    height: 1000,
+    [theme.breakpoints.only("xs")]: {
+      width:"100vw",
+      marginLeft:"2rem",
+    },
+
   },
   image:{
     width:"100%",
@@ -27,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
      fontSize:"1.5rem",
      color:"#f44336",
     [theme.breakpoints.only("xs")]: {
-      fontSize:"1rem",
+      fontSize:"0.7rem",
+      marginLeft:"-1rem",
     },
   },
   }));
@@ -38,8 +51,8 @@ export default function Gallery() {
 
   return (
     <div className={classes.root}>
-      <ImageList rowHeight={180} className={classes.imageList} cols={4}>
-      <ImageListItem key="Subheader" cols={2} style={{height:'auto'}}>
+      <ImageList rowHeight={250} className={classes.imageList} cols={3}>
+      <ImageListItem key="Subheader" cols={1} style={{height:'auto'}}>
       <ListSubheader component="div"  className={classes.text}style={{fontWeight:'bold',}}>fahrzeuge die ich bewegt habe </ListSubheader>
       </ImageListItem>
         {itemData.map((item) => (

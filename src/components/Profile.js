@@ -10,13 +10,21 @@ mainContainer:{
     placeItems:"center",
     background:"#f5f5f5",
 
+    [theme.breakpoints.between("xs", "sm")]: {
+        transform:"translate(0%,20%)",
+    },
 },
 title:{
     textAlign:"center",
-    fontSize:"2rem",
+    fontSize:"2.5rem",
     letterSpacing:".7rem",
     textTransform:"uppercase",
-    marginBottom:"4rem",
+    // marginBottom:"4rem",
+
+    [theme.breakpoints.between("xs","sm")]: {
+
+        fontSize:"2rem",
+    },
 },
 underline:{
     height:"0.25rem",
@@ -40,6 +48,12 @@ textAlign:"center",
 "&:hover":{
     boxShadow:"0 5px 10px rgba(0,0,0,0.4)",
 },
+[theme.breakpoints.between("xs","sm")]: {
+transform:"translate(-5%)",
+},
+// [theme.breakpoints.only("sm")]: {
+//     transform:"translate(-5%)",
+//     },
 },
 imgContainer:{
     position:"relative",
@@ -109,8 +123,8 @@ const Profile = () => {
     return(
         
         <section className={classes.mainContainer}>
-            <div className={classes.title}>
-                <h2>Kurzprofile</h2>
+            <div>
+                <h2 className={classes.title}>Kurzprofile</h2>
             <div className={classes.underline}></div>
             </div>
             <article className={classes.profile}>

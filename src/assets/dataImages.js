@@ -13,7 +13,7 @@ const images = [
     },
     {
         id:3,
-        img:"https://res.cloudinary.com/dbiqsk9jz/image/upload/v1627828359/samples/Traffic/truck1_odaxnn.jpg",
+        img:"https://res.cloudinary.com/dbiqsk9jz/image/upload/v1637506540/samples/Traffic/gabriel-santos-GBVDilE8yvI-unsplash_zzoitv.jpg",
         title: "Ich bin Selbsständig"
 
     },
