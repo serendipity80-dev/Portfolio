@@ -18,94 +18,79 @@ import Image15 from '../assets/images/ard15.png';
 
 const ardItems = [
     {
-        img:Image1,
-        title:"explosive Stoffe",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image1,
+        caption:"explosive Stoffe",
+        
     },
     {
-        img:Image2,
-        title:"Entzündbare Gase",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image2,
+        caption:"Entzündbare Gase",
+       
     },
     {
-        img:Image3,
-        title:"Nicht Entzünbare Gase, nicht giftige Gase ",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image3,
+        caption:"Nicht Entzünbare Gase, nicht giftige Gase ",
+        
     },
     {
-        img:Image4,
-        title:" Giftige Gase",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image4,
+        caption:" Giftige Gase",
+       
     },
     {
-        img:Image5,
-        title:"Entzündbare flüssige Stoffe",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image5,
+        caption:"Entzündbare flüssige Stoffe",
+        
     },
     {
-        img:Image6,
-        title:"Entzündbare feste Stoffe",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image6,
+        caption:"Entzündbare feste Stoffe",
+        
     },
     {
-        img:Image7,
-        title:"Selbstentzündliche Stoffe",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image7,
+        caption:"Selbstentzündliche Stoffe",
+      
     },
     {
-        img:Image8,
-        title:"Stoffe die in Berührung mit Wasser entzünbare Gase entwickeln",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image8,
+        caption:"Stoffe die in Berührung mit Wasser entzünbare Gase entwickeln",
+       
     },
     {
-        img:Image9,
-        title:"Entzündend wirkende Stoffe",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image9,
+        caption:"Entzündend wirkende Stoffe",
+       
     },
     {
-        img:Image10,
-        title:"Organische Peroxide",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image10,
+        caption:"Organische Peroxide",
+       
     },
     {
-        img:Image11,
-        title:"Giftige Stoffe",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image11,
+        caption:"Giftige Stoffe",
+        
     },
     {
-        img:Image12,
-        title:"Ansteckungs gefährliche Stoffe",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image12,
+        caption:"Ansteckungs gefährliche Stoffe",
+       
     },
     {
-        img:Image13,
-        title:"Radioaktive Stoffe",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image13,
+        caption:"Radioaktive Stoffe",
+       
     },
     {
-        img:Image14,
-        title:"Ätzende Stoffe",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image14,
+        caption:"Ätzende Stoffe",
+        
     },
     {
-        img:Image15,
-        title:"Verschiedene gefährliche Stoffe und Gegenstände",
-        author:"Miro Bagaric",
-        cols: 1,
+        image:Image15,
+        caption:"Verschiedene gefährliche Stoffe und Gegenstände",
+       
     },
 ]
 export default ardItems;

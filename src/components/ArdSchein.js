@@ -1,107 +1,107 @@
-import {useState, useEffect} from 'react';
+import React from 'react';
 import ardShein from '../assets/ardItems';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight'; 
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-// import { makeStyles } from '@material-ui/core/styles';
+import { Carousel } from "react-carousel-minimal";
 
-// const useStyles = makeStyles ({
-//   root: {
-//     height: '100vh',
-//     overflow: 'hidden',
-// },
-// main: {
-//   position:'absolute',
-//   top: '20%',
-//   left: '50%',
-//   width:'60vw',
-//   height:'70vh',
-//   opacity:' 0',
-//   transition: 'all 0.3s ease-in-out',
-//   boxShadow:' 0 5px 10px rgba(255,255,255,0.3)',
-// }
-//   }
-// )
+
+
 
 const ArdShein = () => {
 
-  // const classes = useStyles();
+  
+  const captionStyle = {
+    fontSize: '2rem',
+    fontWeight:'400',
+    textTransfrom:'uppercase',
+    color:'#404040',
+    textShadow:'0 5px 0 rgba(255,255,255,0.5)',
+}
 
-  const [data, setData] = useState(ardShein);
-  const [index, setIndex] = useState(0);
+const slideNumberStyle = {
+    fontSize:' 20px',
+    fontWeight:'bold',
+}
 
-  const prevSlide = ()=>{
-    setIndex((oldIndex) =>{
-      let index = oldIndex -1;
-      if (index < 0) {
-        index = data.length -1;
-      }
-      return index;
-    });
-  };
-  const nextSlide = ()=>{
-    setIndex((oldIndex) =>{
-      let index = oldIndex +1;
-      if (index >  data.length - 1) {
-        index = 0;
-      }
-      return index;
-    });
-  };
+return(
+    <>
+<div className="App">
+<div style={{padding:'0 20px',marginTop:'6rem'}}>
+    <Carousel data={ardShein}
+            time={3000}
+            width='80vw'
+            height='500px'
+            captionStyle={captionStyle}
+            radius='10px'
+            slideNumber={true}
+            slideNumberStyle={slideNumberStyle}
+            captionPosition='bottom'
+            automatic={true}
+            dots={true}
+            pauseIconColor='white'
+            pauseIconSize='40px'
+            slideBackgroundColor='#333'
+            slideImageFit='cover'
+            thumbnails={true}
+            thumbnailWidth='100px'
+            
+            style={{
+                
+                textAlign: 'center',
+                maxWidth: '70vw',
+                maxHeight: '500px',
+                margin: '40px auto',
+                textTransform: 'uppercase',
 
-      useEffect(() => {
-        let slider = setInterval(() => {
-                  setIndex((prevIndex) => {
-                  let index = prevIndex +1
-      
-             if(index > data.length -1){
-               index = 0
-              }
-               return index
-             })
-              },36000)
-         return () => {
-          clearInterval(slider)
-        }
-          },[index,data])
+            }}
+            />
+</div> 
+</div>
 
-        return (
-          <>
-          <div className="App">
-        <div className="section-center">
-            {data.map((adrData,dataIndex) => {
-                const {id,img, title} = adrData;
-                let position = 'nextSlide'
-
-                if(dataIndex === index){
-                    position = 'activeSlide'
-                }
-
-                if(dataIndex === index -1 || (index === 0 && dataIndex === adrData.length -1)) {
-                    position = " lastSlide";
-                }
-
-                return(
-                    <una className={position} key={id}>
-                        <img src={img} alt="traffic" className="bg ard"/>
-                        <div className="shade"></div>
-                        <div className="info">
-                            <h2>{title}</h2>
-                            
-                        </div>   
-                    </una>
-                )
-            })}
-            <button className="prev">
-                <ChevronLeftIcon onClick={prevSlide}/>
-            </button>
-            <button className="next">
-    <ChevronRightIcon onClick={nextSlide}/>
-</button>
-        </div>   
-        </div>
 </>
-
 )
+
+ 
+   
+
+      
+
+//         return (
+//           <>
+//           <div className="App">
+//         <div className="section-center">
+//             {data.map((adrData,dataIndex) => {
+//                 const {id,img, title} = adrData;
+//                 let position = 'nextSlide'
+
+//                 if(dataIndex === index){
+//                     position = 'activeSlide'
+//                 }
+
+//                 if(dataIndex === index -1 || (index === 0 && dataIndex === adrData.length -1)) {
+//                     position = " lastSlide";
+//                 }
+
+//                 return(
+//                     <una className={position} key={id}>
+//                         <img src={img} alt="traffic" className="bg ard"/>
+//                         <div className="shade"></div>
+//                         <div className="info">
+//                             <h2>{title}</h2>
+                            
+//                         </div>   
+//                     </una>
+//                 )
+//             })}
+//             <button className="prev">
+//                 <ChevronLeftIcon onClick={prevSlide}/>
+//             </button>
+//             <button className="next">
+//     <ChevronRightIcon onClick={nextSlide}/>
+// </button>
+//         </div>   
+//         </div>
+// </>
+
+// )
 
 }
 

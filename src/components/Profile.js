@@ -8,7 +8,8 @@ mainContainer:{
     minHeight:"100vh",
     display:"grid",
     placeItems:"center",
-    background:"#f5f5f5",
+    background:"#f1f1f1",
+    marginTop:'10rem',
 
     [theme.breakpoints.between("xs", "sm")]: {
         transform:"translate(0%,20%)",
@@ -19,10 +20,11 @@ title:{
     fontSize:"2.5rem",
     letterSpacing:".7rem",
     textTransform:"uppercase",
+    marginTop:"7rem",
     // marginBottom:"4rem",
 
     [theme.breakpoints.between("xs","sm")]: {
-
+        marginTop:"-7rem",
         fontSize:"2rem",
     },
 },
@@ -32,14 +34,20 @@ underline:{
     background:"#f44336",
     marginLeft:"auto",
     marginRight:"auto",
-    marginTop:"0",
+    marginTop:"-3rem",
+
+    [theme.breakpoints.between("xs","sm")]: {
+
+        marginTop:'-5rem',
+    },
+
 },
 // mainContainer:{
 //     width:"80vw",
 //     maxWidth:"1170px",
 // },
 profile:{
-    width:"80vw",
+    width:"70vw",
 background:"#f1f1f1",
 padding:"1.5rem 2rem",
 borderRadius:"20px",
@@ -49,7 +57,9 @@ textAlign:"center",
     boxShadow:"0 5px 10px rgba(0,0,0,0.4)",
 },
 [theme.breakpoints.between("xs","sm")]: {
-transform:"translate(-5%)",
+transform:"translate(0%, -20%)",
+width:"95vw",
+// marginTop:'1rem',
 },
 // [theme.breakpoints.only("sm")]: {
 //     transform:"translate(-5%)",
