@@ -248,7 +248,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign:'center',
         maxWidth:'8.375rem',
         maxHeight:'2.5rem',
-        margin:' 0 rem 0 auto',
+        margin:' 0 1rem 0 auto',
         fontSize:'1.5rem',
         background:'#616161',
         color:'#f1f1f1',

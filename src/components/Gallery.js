@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, styled } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import {ImageList, ImageListItem, Typography} from '@material-ui/core';
 // import ImageList from '@material-ui/core/ImageList';
 // import ListSubheader from '@material-ui/core/ListSubheader';
@@ -21,7 +21,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection:"column",
     alignItems:"center",
     justifyContent:"center",
-    transform:'translate(0%,15%)',  
+    transform:'translate(0%,10%)', 
+    [theme.breakpoints.between("xs","sm")] : {
+      transform:"translate(0,-10%)",
+    },
   },
   underline:{
     height:"0.25rem",
@@ -29,12 +32,11 @@ const useStyles = makeStyles((theme) => ({
     background:"#f44336",
     marginLeft:"auto",
     marginRight:"auto",
-    marginBottom:"3rem",
+    marginBottom:"4.5rem",
     marginTop:"1rem",
-    // marginTop:"-3rem",
 
     [theme.breakpoints.between("xs","sm")]: {
-        // marginTop:'-5rem',
+        marginBottom:'3rem',
     },
 
 },
@@ -47,10 +49,15 @@ imageList: {
     },
   },
 },
+item: {
+  borderRadius:"20px",
+},
   text :{
     textTransform:"uppercase",
      color:"#333",
-    [theme.breakpoints.only("xs")]: {
+    letterSpacing:".3rem",
+
+    [theme.breakpoints.between("xs","sm")]: {
       fontSize:"1.786rem",
       marginLeft:"1rem",
       textAlign:"center",
@@ -68,12 +75,13 @@ export default function Gallery() {
       <div className={classes.underline}></div>
     <ImageList sx={{ width: 400, height: 450 }} cols={4} rowHeight={200} className={classes.imageList}>
       {itemData.map((item) => (
-        <ImageListItem key={item.img}>
+        <ImageListItem key={item.img} >
           <img
             src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
             srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
             alt={item.title}
             loading="lazy"
+            className={classes.item}
           />
         </ImageListItem>
       ))}

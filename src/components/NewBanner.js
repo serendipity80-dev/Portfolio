@@ -29,7 +29,7 @@ const NewBanner = () => {
                 radius='10px'
                 slideNumber={true}
                 slideNumberStyle={slideNumberStyle}
-                captiooPosition='bottom'
+                captionPosition='bottom'
                 automatic={true}
                 dots={true}
                 pauseIconColor='white'

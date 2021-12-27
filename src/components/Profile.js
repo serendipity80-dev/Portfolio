@@ -14,7 +14,10 @@ mainContainer:{
     marginTop:'10rem',
 
     [theme.breakpoints.between("xs", "sm")]: {
-        transform:"translate(0%,20%)",
+        transform:"translate(0%,-10%)",
+    },
+    [theme.breakpoints.up( "sm")]: {
+        transform:"translate(0%,10%)",
     },
 },
 title:{
@@ -39,26 +42,32 @@ underline:{
 
     [theme.breakpoints.between("xs","sm")]: {
 
-        marginTop:'-5rem',
+        marginBottom:'6rem',
     },
 
 },
 
 profile:{
-    width:"70vw",
+width:"70vw",
 background:"#f1f1f1",
 padding:"1.5rem 2rem",
 borderRadius:"20px",
 boxShadow:"0 5px 10px rgba(0,0,0,0.2)",
 textAlign:"center",
+marginBottom:"4.5rem",
 "&:hover":{
     boxShadow:"0 5px 10px rgba(0,0,0,0.4)",
 },
 [theme.breakpoints.between("xs","sm")]: {
-transform:"translate(0%, -20%)",
+transform:"translate(0%, -15%)",
 width:"95vw",
-
+// marginBottom:"4.5rem",
 },
+[theme.breakpoints.up("sm")]: {
+    transform:"translate(0%, -20%)",
+    width:"80vw",
+    // marginBottom:"4.5rem",
+    },
 
 },
 imgContainer:{
@@ -119,17 +128,7 @@ const Profile = () => {
 
     const {name, img, job, description,} = profile[index];
 
-   
 
-
-    const personProfile = number => {
-        if(number > profile.length -1) {
-            return 0
-        }
-        if(number < profile.length -1) {
-            return number
-        }
-    }
     return(
         
         <section className={classes.mainContainer}>
