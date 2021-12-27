@@ -1,46 +1,59 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import ImageList from '@material-ui/core/ImageList';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import ImageListItem from '@material-ui/core/ImageListItem';
+import { makeStyles, styled } from '@material-ui/core/styles';
+import {ImageList, ImageListItem, Typography} from '@material-ui/core';
+// import ImageList from '@material-ui/core/ImageList';
+// import ListSubheader from '@material-ui/core/ListSubheader';
+// import ImageListItem from '@material-ui/core/ImageListItem';
 import itemData from '../assets/itemData';
+
+
+// const Img = styled('img')({
+  
+//   display: 'block',
+//   maxWidth: '100%',
+//   maxHeight: '100%',
+// });
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
-    [theme.breakpoints.only("xs")]: {
-      display:"flex",
-      alignItems:"center",
-      justifyContent:"center",
+    display:"flex",
+    flexDirection:"column",
+    alignItems:"center",
+    justifyContent:"center",
+    transform:'translate(0%,15%)',  
+  },
+  underline:{
+    height:"0.25rem",
+    width:"5rem",
+    background:"#f44336",
+    marginLeft:"auto",
+    marginRight:"auto",
+    marginBottom:"3rem",
+    marginTop:"1rem",
+    // marginTop:"-3rem",
+
+    [theme.breakpoints.between("xs","sm")]: {
+        // marginTop:'-5rem',
     },
 
-  },
-  imageList: {
-    padding:'10rem',
-    // transform:"translate(0%,50%)",
-    width: '85vw',
-    height: 1000,
-    [theme.breakpoints.only("xs")]: {
-      width:"100vw",
-      marginLeft:"2rem",
-    },
+},
+imageList: {
+  width:"70vw",
 
+  [theme.breakpoints.between("xs","sm")]: {
+    imageList: {
+      width:"100%",
+    },
   },
-  image:{
-    width:"100%",
-    height:"100%",
-  },
+},
   text :{
     textTransform:"uppercase",
-     fontSize:"1.5rem",
-     color:"#f44336",
+     color:"#333",
     [theme.breakpoints.only("xs")]: {
-      fontSize:"0.7rem",
-      marginLeft:"-1rem",
+      fontSize:"1.786rem",
+      marginLeft:"1rem",
+      textAlign:"center",
     },
   },
   }));
@@ -51,16 +64,20 @@ export default function Gallery() {
 
   return (
     <div className={classes.root}>
-      <ImageList rowHeight={250} className={classes.imageList} cols={3}>
-      <ImageListItem key="Subheader" cols={1} style={{height:'auto'}}>
-      <ListSubheader component="div"  className={classes.text}style={{fontWeight:'bold',}}>fahrzeuge die ich bewegt habe </ListSubheader>
-      </ImageListItem>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img} cols={item.cols || 1}>
-            <img src={item.img} alt={item.title}  className={classes.image}/>
-          </ImageListItem>
-        ))}
-      </ImageList>
+      <Typography variant="h4" className={classes.text}> Fahrzeuge die ich bewegt habe</Typography>
+      <div className={classes.underline}></div>
+    <ImageList sx={{ width: 400, height: 450 }} cols={4} rowHeight={200} className={classes.imageList}>
+      {itemData.map((item) => (
+        <ImageListItem key={item.img}>
+          <img
+            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+            alt={item.title}
+            loading="lazy"
+          />
+        </ImageListItem>
+      ))}
+    </ImageList>
     </div>
   );
 }

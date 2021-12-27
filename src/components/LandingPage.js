@@ -2,6 +2,7 @@ import React from 'react';
 // import Banner from './Banner';
 import NewBanner from './NewBanner';
 import Profile from './Profile';
+import Gallery from './Gallery';
 
 const LandingPage = () => {
     return (
@@ -9,6 +10,7 @@ const LandingPage = () => {
            {/* <Banner/>  */}
            <NewBanner/>
            <Profile/>
+           <Gallery/>
            
         </div>
     )

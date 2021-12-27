@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
         background:'#616161',
         color:'#f1f1f1',
         // color:'#616161',
-        padding:'0.5rem 1rem 0 ',
+        padding:'0.5rem 0.5rem 0 ',
 
         "&:before": {
             display:'none',
@@ -103,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     heading:{
-        color:'#f44336',
+        color:'#333',
         padding:'5rem 0',
         textTransform:'uppercase',
     },

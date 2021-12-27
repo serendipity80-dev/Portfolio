@@ -3,6 +3,8 @@ import profile from '../assets/miroData';
 import { FormatQuote } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core';
 
+
+
 const useStyles = makeStyles((theme) => ({
 mainContainer:{
     minHeight:"100vh",
@@ -20,11 +22,10 @@ title:{
     fontSize:"2.5rem",
     letterSpacing:".7rem",
     textTransform:"uppercase",
-    marginTop:"7rem",
-    // marginBottom:"4rem",
+    // marginTop:"7rem",
 
     [theme.breakpoints.between("xs","sm")]: {
-        marginTop:"-7rem",
+        // marginTop:"-7rem",
         fontSize:"2rem",
     },
 },
@@ -34,7 +35,7 @@ underline:{
     background:"#f44336",
     marginLeft:"auto",
     marginRight:"auto",
-    marginTop:"-3rem",
+    marginTop:"-4rem",
 
     [theme.breakpoints.between("xs","sm")]: {
 
@@ -42,10 +43,7 @@ underline:{
     },
 
 },
-// mainContainer:{
-//     width:"80vw",
-//     maxWidth:"1170px",
-// },
+
 profile:{
     width:"70vw",
 background:"#f1f1f1",
@@ -59,11 +57,9 @@ textAlign:"center",
 [theme.breakpoints.between("xs","sm")]: {
 transform:"translate(0%, -20%)",
 width:"95vw",
-// marginTop:'1rem',
+
 },
-// [theme.breakpoints.only("sm")]: {
-//     transform:"translate(-5%)",
-//     },
+
 },
 imgContainer:{
     position:"relative",
@@ -118,9 +114,13 @@ info:{
 }))
 const Profile = () => {
     const classes = useStyles();
+
     const [index, setIndex] = useState(0);
 
-    const {name, img, job, description} = profile[index];
+    const {name, img, job, description,} = profile[index];
+
+   
+
 
     const personProfile = number => {
         if(number > profile.length -1) {
@@ -137,6 +137,8 @@ const Profile = () => {
                 <h2 className={classes.title}>Kurzprofile</h2>
             <div className={classes.underline}></div>
             </div>
+
+           
             <article className={classes.profile}>
                 <div className={classes.imgContainer}>
                     <img src={img} alt={name} className={classes.personImg}/>

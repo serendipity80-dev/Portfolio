@@ -248,12 +248,11 @@ const useStyles = makeStyles((theme) => ({
         textAlign:'center',
         maxWidth:'8.375rem',
         maxHeight:'2.5rem',
-        margin:' 0 1rem 0 auto',
+        margin:' 0 rem 0 auto',
         fontSize:'1.5rem',
         background:'#616161',
         color:'#f1f1f1',
-        // color:'#616161',
-        padding:'0.5rem 1rem 0 ',
+        padding:'0.5rem 0.5rem 0 ',
 
         "&:before": {
             display:'none',
@@ -272,7 +271,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     heading:{
-        color:'#f44336',
+        color:'#333',
         padding:'5rem 0',
         textTransform:'uppercase',
     },

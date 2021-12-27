@@ -23,7 +23,7 @@ const NewBanner = () => {
     <div style={{padding:'0 20px',marginTop:'5rem'}}>
         <Carousel data={images}
                 time={3000}
-                width='80vw'
+                width='90vw'
                 height='500px'
                 captionStyle={captionStyle}
                 radius='10px'

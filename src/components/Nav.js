@@ -31,8 +31,8 @@ href: "/",
     href: "/adr",
   },
   {
-    label: "Die Galerie",
-    href: "/gallery",
+    label: "Kontakt",
+    href: "/contact",
   },
 ];
 
