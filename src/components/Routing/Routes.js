@@ -14,14 +14,12 @@ import AdrShein from '../AdrShein';
 const Routes = () => {
     return (
         <Router>
-        {/* <LandingPage/> */}
-        {/* <Header/> */}
+        
         <Nav/>
 
              <Switch>
      <Route path="/" exact component={LandingPage}/>{' '}
      <Route path="/about" exact component={About}/>{' '}
-     {/* <Route path="/training" exact component={Training}/>{' '} */}
      <Route path="/adr" exact component={AdrShein}/>{' '}
      <Route path="/gallery" exact component={Gallery}/>{' '}
      <Route path = "/contact" exact component={Contact}/> {' '}
