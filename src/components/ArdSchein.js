@@ -1,107 +1,95 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Close from '@material-ui/icons/Close';
 import ardShein from '../assets/ardItems';
-import { Carousel } from "react-carousel-minimal";
 
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        background:'#333',
+    },
+    gallery: {
+        marginTop:'4rem',
+        display:'grid',
+        gridTemplateColumns:'repeat(4, 1fr)',
+        gap:'.6rem',
+        minHeight:'100vh',
+
+        [theme.breakpoints.between("xs","sm")]: {
+        gridTemplateColumns:'repeat(1, 1fr)',
+           
+          },
+          [theme.breakpoints.between("sm","md")]: {
+            gridTemplateColumns:'repeat(3, 1fr)',
+               
+              },
+        },
+        pics: {
+           transition:'all 350s ease',
+           marginBottom:'2rem',
+
+            '& img': {
+                borderRadius:'50%',
+                boxShadow:'0px 5px 15px rgba(0,0,0,0.2)',
+                marginTop:'1rem',
+                
+           
+            '&:hover':{
+                cursor:'pointer',
+                opacity:'.8',
+            },
+        },
+      
+        },
+        caption: {
+           color:'#333',
+            textTransform:'uppercase',
+            textAlign:'center',
+        },
+}))
 
 
 
 const ArdShein = () => {
 
-  
-  const captionStyle = {
-    fontSize: '2rem',
-    fontWeight:'400',
-    textTransfrom:'uppercase',
-    color:'#404040',
-    textShadow:'0 5px 0 rgba(255,255,255,0.5)',
-}
+    const [model, setModel] = useState(false)
+    const [tempSetImg, setTempImg] = useState('')
 
-const slideNumberStyle = {
-    fontSize:' 20px',
-    fontWeight:'bold',
-}
+    const classes = useStyles()
+  
+    const getImage = (image) => {
+        setTempImg(image);
+
+        setModel(true)
+    }
 
 return(
     <>
-<div className="App">
-<div style={{padding:'0 20px',marginTop:'6rem'}}>
-    <Carousel data={ardShein}
-            time={3000}
-            width='80vw'
-            height='500px'
-            captionStyle={captionStyle}
-            radius='10px'
-            slideNumber={true}
-            slideNumberStyle={slideNumberStyle}
-            captionPosition='bottom'
-            automatic={true}
-            dots={true}
-            pauseIconColor='white'
-            pauseIconSize='40px'
-            slideBackgroundColor='#333'
-            slideImageFit='cover'
-            thumbnails={true}
-            thumbnailWidth='100px'
-            
-            style={{
-                
-                textAlign: 'center',
-                maxWidth: '70vw',
-                maxHeight: '500px',
-                margin: '40px auto',
-                textTransform: 'uppercase',
+    <div className={ model ? 'model open' : 'model'}>
+    <img src={tempSetImg} alt={tempSetImg.caption}/>
+    <Close onClick={() => setModel(false)} />
 
-            }}
-            />
-</div> 
-</div>
+    </div>
 
-</>
+    <div className={classes.gallery}>
+ 
+    { ardShein.map((item, index) =>{
+         return (
+             <div className={classes.pics} key={index} onClick={()=> getImage(item.image)}>
+
+                 <img src={item.image} alt={item.caption} style={{width:'100%'}}/>
+                 <h4 className={classes.caption}>{item.caption} </h4>
+                 </div>
+         )
+
+         
+         })}
+
+    </div>
+    </>
 )
 
- 
-   
 
-      
-
-//         return (
-//           <>
-//           <div className="App">
-//         <div className="section-center">
-//             {data.map((adrData,dataIndex) => {
-//                 const {id,img, title} = adrData;
-//                 let position = 'nextSlide'
-
-//                 if(dataIndex === index){
-//                     position = 'activeSlide'
-//                 }
-
-//                 if(dataIndex === index -1 || (index === 0 && dataIndex === adrData.length -1)) {
-//                     position = " lastSlide";
-//                 }
-
-//                 return(
-//                     <una className={position} key={id}>
-//                         <img src={img} alt="traffic" className="bg ard"/>
-//                         <div className="shade"></div>
-//                         <div className="info">
-//                             <h2>{title}</h2>
-                            
-//                         </div>   
-//                     </una>
-//                 )
-//             })}
-//             <button className="prev">
-//                 <ChevronLeftIcon onClick={prevSlide}/>
-//             </button>
-//             <button className="next">
-//     <ChevronRightIcon onClick={nextSlide}/>
-// </button>
-//         </div>   
-//         </div>
-// </>
-
-// )
 
 }
 

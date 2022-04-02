@@ -1,29 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { makeStyles} from '@material-ui/core/styles';
-import {ImageList, ImageListItem, Typography} from '@material-ui/core';
-// import ImageList from '@material-ui/core/ImageList';
-// import ListSubheader from '@material-ui/core/ListSubheader';
-// import ImageListItem from '@material-ui/core/ImageListItem';
 import itemData from '../assets/itemData';
+import {Close} from '@material-ui/icons'
 
 
-// const Img = styled('img')({
-  
-//   display: 'block',
-//   maxWidth: '100%',
-//   maxHeight: '100%',
-// });
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display:"flex",
-    flexDirection:"column",
-    alignItems:"center",
-    justifyContent:"center",
-    transform:'translate(0%,10%)', 
-    [theme.breakpoints.between("xs","sm")] : {
-      transform:"translate(0,-10%)",
+root: {
+  position:'relative',
+  textAlign:'center',
+},
+  title: {
+    fontSize:'2rem',
+    textTransform:'uppercase',
+    [theme.breakpoints.between("xs","sm")]: {
+      marginTop:'-7rem',
+    },
+    [theme.breakpoints.between("sm","md")]: {
+      marginTop:'1rem',
+    },
+    [theme.breakpoints.up("md")]: {
+      marginTop:'5rem',
     },
   },
   underline:{
@@ -32,60 +30,98 @@ const useStyles = makeStyles((theme) => ({
     background:"#f44336",
     marginLeft:"auto",
     marginRight:"auto",
-    marginBottom:"4.5rem",
     marginTop:"1rem",
 
     [theme.breakpoints.between("xs","sm")]: {
-        marginBottom:'3rem',
+
+        transform:'translate(0%,35%)',
+
     },
 
 },
-imageList: {
-  width:"70vw",
-
-  [theme.breakpoints.between("xs","sm")]: {
-    imageList: {
-      width:"100%",
-    },
-  },
-},
-item: {
-  borderRadius:"20px",
-},
-  text :{
-    textTransform:"uppercase",
-     color:"#333",
-    letterSpacing:".3rem",
+gallery: {
+    // marginTop:'3rem',
+    display:'grid',
+   alignItems:'center',
+   justifyContent:'center',
+   
+    gridTemplateColumns:'repeat(4, 300px)',
+    gap:'.6rem',
+    minHeight:'100vh',
 
     [theme.breakpoints.between("xs","sm")]: {
-      fontSize:"1.786rem",
-      marginLeft:"1rem",
-      textAlign:"center",
+    gridTemplateColumns:'repeat(1, 1fr)',
+    marginTop:'6rem',
+       
+      },
+      [theme.breakpoints.between("sm","md")]: {
+        gridTemplateColumns:'repeat(3, 1fr)',
+        marginTop:'5rem',
+
+           
+          },
     },
-  },
+    pics: {
+       transition:'all 350s ease',
+       marginBottom:'2rem',
+
+        '& img': {
+            borderRadius:'20px',
+            boxShadow:'0px 5px 15px rgba(0,0,0,0.2)',
+            marginTop:'1rem',
+            
+       
+        '&:hover':{
+            cursor:'pointer',
+            opacity:'.8',
+        },
+    },
+  
+    },
+
   }));
 
 
-export default function Gallery() {
+const Gallery = () => {
   const classes = useStyles();
 
+  const [model, setModel] = useState(false)
+  const [tempSetImg, setTempImg] = useState('')
+
+  const getImage = (img) => {
+    setTempImg(img);
+
+    setModel(true)
+}
   return (
+    <>
     <div className={classes.root}>
-      <Typography variant="h4" className={classes.text}> Fahrzeuge die ich bewegt habe</Typography>
-      <div className={classes.underline}></div>
-    <ImageList sx={{ width: 400, height: 450 }} cols={4} rowHeight={200} className={classes.imageList}>
-      {itemData.map((item) => (
-        <ImageListItem key={item.img} >
-          <img
-            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
-            loading="lazy"
-            className={classes.item}
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
+    <h4 className={classes.title}>photo galerie</h4>
+    <div className={classes.underline}></div>
+    </div> 
+    <div className={ model ? 'model open' : 'model'}>
+    <img src={tempSetImg} alt={tempSetImg.title}/>
+    <Close onClick={() => setModel(false)} />
+
     </div>
+
+    <div className={classes.gallery}>
+ 
+    { itemData.map((item, index) =>{
+         return (
+             <div className={classes.pics} key={index} onClick={()=> getImage(item.img)}>
+
+                 <img src={item.img} alt={item.title} style={{width:'100%'}}/>
+                
+                 </div>
+         )
+
+         
+         })}
+
+    </div>
+    </>
   );
 }
+
+export default Gallery

@@ -16,13 +16,14 @@ const NewBanner = () => {
         fontSize:' 20px',
         fontWeight:'bold',
     }
+  
 
     return(
         <>
 <div className="App">
     <div style={{padding:'0 20px',marginTop:'5rem'}}>
         <Carousel data={images}
-                time={3000}
+                time={5000}
                 width='90vw'
                 height='500px'
                 captionStyle={captionStyle}
@@ -32,13 +33,13 @@ const NewBanner = () => {
                 captionPosition='bottom'
                 automatic={true}
                 dots={true}
-                pauseIconColor='white'
-                pauseIconSize='40px'
-                slideBackgroundColor='#333'
+                // pauseIconColor='white'
+                // pauseIconSize='40px'
+                //  slideBackgroundColor= '#333'
                 slideImageFit='cover'
                 thumbnails={true}
                 thumbnailWidth='250px'
-                
+    
                 style={{
                     
                     textAlign: 'center',
@@ -46,7 +47,7 @@ const NewBanner = () => {
                     maxHeight: '500px',
                     margin: '40px auto',
                     textTransform: 'uppercase',
-                    color: 'red',
+                    color: 'white',
 
                 }}
                 />

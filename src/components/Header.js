@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme)=> ({
 const Header = () => {
 
  const classes = useStyles();
-const preventDefault = (event) => event.preventDefault()
+// const preventDefault = (event) => event.preventDefault()
     return (
 
         <div className={classes.root}>

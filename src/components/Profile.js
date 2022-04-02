@@ -16,8 +16,11 @@ mainContainer:{
     [theme.breakpoints.between("xs", "sm")]: {
         transform:"translate(0%,-10%)",
     },
-    [theme.breakpoints.up( "sm")]: {
+    [theme.breakpoints.between( "sm", "md")]: {
         transform:"translate(0%,10%)",
+    },
+    [theme.breakpoints.up( "md")]: {
+        transform:"translate(0%,20%)",
     },
 },
 title:{
@@ -25,11 +28,11 @@ title:{
     fontSize:"2.5rem",
     letterSpacing:".7rem",
     textTransform:"uppercase",
-    // marginTop:"7rem",
+    
 
     [theme.breakpoints.between("xs","sm")]: {
-        // marginTop:"-7rem",
         fontSize:"2rem",
+        transform:'translate(0%,35%)',
     },
 },
 underline:{
@@ -38,11 +41,12 @@ underline:{
     background:"#f44336",
     marginLeft:"auto",
     marginRight:"auto",
-    marginTop:"-4rem",
+    marginTop:"1rem",
 
     [theme.breakpoints.between("xs","sm")]: {
 
-        marginBottom:'6rem',
+        transform:'translate(0%,35%)',
+
     },
 
 },
@@ -59,15 +63,17 @@ marginBottom:"4.5rem",
     boxShadow:"0 5px 10px rgba(0,0,0,0.4)",
 },
 [theme.breakpoints.between("xs","sm")]: {
-transform:"translate(0%, -15%)",
+transform:"translate(0%, -10%)",
 width:"95vw",
-// marginBottom:"4.5rem",
 },
-[theme.breakpoints.up("sm")]: {
-    transform:"translate(0%, -20%)",
+[theme.breakpoints.between("sm","md")]: {
+    transform:"translate(0%, -30%)",
     width:"80vw",
-    // marginBottom:"4.5rem",
     },
+    [theme.breakpoints.up("md")]: {
+        transform:"translate(0%, -10%)",
+        width:"80vw",
+        },
 
 },
 imgContainer:{
@@ -126,7 +132,7 @@ const Profile = () => {
 
     const [index, setIndex] = useState(0);
 
-    const {name, img, job, description,} = profile[index];
+    const {name, img, job, description} = profile[index];
 
 
     return(
@@ -150,6 +156,11 @@ const Profile = () => {
                 <p className={classes.info}> {description} </p>
 
             </article>
+            <div className='arrow'>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
         </section>
         
     )

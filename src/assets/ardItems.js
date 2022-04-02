@@ -18,76 +18,91 @@ import Image15 from '../assets/images/ard15.png';
 
 const ardItems = [
     {
+        id:'1',
         image:Image1,
         caption:"explosive Stoffe",
         
     },
     {
+        id:'2',
         image:Image2,
         caption:"Entzündbare Gase",
        
     },
     {
+        id:'3',
         image:Image3,
         caption:"Nicht Entzünbare Gase, nicht giftige Gase ",
         
     },
     {
+        id:'4',
         image:Image4,
         caption:" Giftige Gase",
        
     },
     {
+        id:'5',
         image:Image5,
         caption:"Entzündbare flüssige Stoffe",
         
     },
     {
+        id:'6',
         image:Image6,
         caption:"Entzündbare feste Stoffe",
         
     },
     {
+        id:'7',
         image:Image7,
         caption:"Selbstentzündliche Stoffe",
       
     },
     {
+        id:'8',
         image:Image8,
         caption:"Stoffe die in Berührung mit Wasser entzünbare Gase entwickeln",
        
     },
     {
+        id:'9',
         image:Image9,
         caption:"Entzündend wirkende Stoffe",
        
     },
     {
+        id:'10',
         image:Image10,
         caption:"Organische Peroxide",
        
     },
     {
+        id:'11',
         image:Image11,
         caption:"Giftige Stoffe",
         
     },
     {
+        id:'12',
         image:Image12,
         caption:"Ansteckungs gefährliche Stoffe",
        
     },
     {
+        id:'13',
         image:Image13,
         caption:"Radioaktive Stoffe",
        
     },
     {
+        id:'14',
         image:Image14,
         caption:"Ätzende Stoffe",
         
     },
     {
+        id:'15',
         image:Image15,
         caption:"Verschiedene gefährliche Stoffe und Gegenstände",
        

@@ -158,7 +158,7 @@ export default function Header() {
 
   const MiroBagaricLogo = (
     <Typography variant="h6" component="h1" className={logo}>
-      Miro Bagaric
+      Miro Bagarić
     </Typography>
   );
 

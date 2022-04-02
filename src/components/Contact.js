@@ -90,7 +90,7 @@ return (
                         pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
                       })}
                       className='form-control formInput'
-                      placeholder='Email address'
+                      placeholder='E-mail Addresse'
                     ></input>
                     {errors.email && (
                       <span className='errorMessage'>Please enter a valid email address</span>
@@ -111,7 +111,7 @@ return (
                         }
                       })}
                       className='form-control formInput'
-                      placeholder='Subject'
+                      placeholder='Betreff'
                     ></input>
                     {errors.subject && (
                       <span className='errorMessage'>{errors.subject.message}</span>
@@ -128,7 +128,7 @@ return (
                         required: true
                       })}
                       className='form-control formInput'
-                      placeholder='Message'
+                      placeholder='Schreibe mir'
                     ></textarea>
                     {errors.message && <span className='errorMessage'>Please enter a message</span>}
                   </div>

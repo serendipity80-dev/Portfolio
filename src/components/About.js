@@ -83,7 +83,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize:'1.5rem',
         background:'#616161',
         color:'#f1f1f1',
-        // color:'#616161',
         padding:'0.5rem 0.5rem 0 ',
 
         "&:before": {
@@ -187,7 +186,7 @@ const About = () => {
                                lkw-fahrer
                               </Typography>
                         <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
-                        auto oberman
+                        auto oberman GmbH
                          </Typography>
                            <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
                            Als Fahrer einen Autotransporter (Achter Zug)
@@ -202,10 +201,10 @@ const About = () => {
                            praktikum
                             </Typography>
                            <Typography variant='body1' align='center' style={{color:'#333',  textTransform:"capitalize"}}>
-                           auto  oberman
+                           auto  oberman GmbH
                             </Typography>
                         <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                        Praktikum als LKW-Fahrer bei int. Spedition Auto-Obermann
+                        Praktikum als LKW-Fahrer bei int. Spedition Auto-Obermann GmbH
                         </Typography>
                         </Box>
           
@@ -232,11 +231,9 @@ const About = () => {
                         kellner
                         </Typography>
                         <Typography variant='body1' align='center' style={{color:'#333', textTransform:"capitalize"}}>
-                        restaurant kupres alt oxford
+                        restaurant kupres alt oxford / Stadtlohn
                         </Typography>
-                        {/* <Typography variant="subtitle1" align="center" style={{color:'tan'}}>
-                            Lorem ipsum
-                        </Typography> */}
+                       
                         </Box>
                
 
@@ -245,8 +242,9 @@ const About = () => {
 
 
                 </Box>
-            </Box>
             <Training/>
+
+            </Box>
         </>
 
     )
