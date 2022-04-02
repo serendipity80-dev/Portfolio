@@ -51,7 +51,7 @@ export default function Footer() {
     <footer className={classes.footer}>   
     
     <Typography variant="h5" component="h3" style={{textTransform:'uppercase'}}>
-        ereichbar unter
+        erreichbar unter
       </Typography>
     
       <Box  bgcolor="#f5f5f5" className={classes.root}>
