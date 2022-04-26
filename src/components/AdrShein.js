@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) =>({
         marginTop:'-5rem',
     
         [theme.breakpoints.between("xs","sm")]: {
-            marginTop:"6rem",
+            marginTop:"8rem",
             fontSize:"2rem",
         },
     },

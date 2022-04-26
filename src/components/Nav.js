@@ -20,19 +20,16 @@ href: "/",
   },
   {
     label: "Lebenslauf",
-    href: "/about",
+    href: "/lebenslauf",
   },
-  // {
-  //   label: "Weiterbidung",
-  //   href: "/training",
-  // },
+  
   {
     label: "ADR",
     href: "/adr",
   },
   {
     label: "Kontakt",
-    href: "/contact",
+    href: "/kontakt",
   },
 ];
 

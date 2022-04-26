@@ -15,7 +15,7 @@ root: {
     fontSize:'2rem',
     textTransform:'uppercase',
     [theme.breakpoints.between("xs","sm")]: {
-      marginTop:'-7rem',
+      marginTop:'-5rem',
     },
     [theme.breakpoints.between("sm","md")]: {
       marginTop:'1rem',
